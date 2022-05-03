@@ -19,32 +19,25 @@
         >Request an account.</router-link
       >
     </div>
-    <div class="toggle-button">
-      <button v-on:click="toggleDarkMode()">Toggle Dark Mode</button>
-    </div>
     <div class="login-container">
       <div class="login">
         <img id="logo" src="@/assets/datamoreWordmark.png" />
         <div class="header">
-          <h5>Please Log Into Your Account</h5>
+          <h5>Please Log Into Your Account.</h5>
         </div>
-        <form class="login-form">
-          <div class="input-label">
-            <input
-              type="text"
-              id="username"
-              placeholder="Username"
-              class="form-control"
-            />
-          </div>
-          <div class="input-label">
-            <input
-              type="password"
-              placeholder="Password"
-              id="password"
-              class="form-control"
-            />
-          </div>
+        <form @submit.prevent="onSubmit" class="login-form">
+          <input
+            type="text"
+            id="username"
+            placeholder="Username"
+            class="form-control"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            id="password"
+            class="form-control"
+          />
           <input type="submit" value="Log In" />
         </form>
       </div>
@@ -54,6 +47,9 @@
       <router-link to="/recover" class="r-link"
         >Forget your password?</router-link
       >
+    </div>
+    <div class="toggle-button">
+      <button v-on:click="toggleDarkMode()">Toggle Dark Mode</button>
     </div>
   </div>
 </template>
@@ -99,7 +95,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 2em;
+  margin-top: 0em;
   margin-bottom: 2em;
   max-height: 60vh;
 }
@@ -109,21 +105,21 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  row-gap: 1em;
-  width: 72vw;
-  max-width: 30em;
+  width: 64vw;
+  max-width: 24em;
 }
 
 .request-block {
   display: flex;
-  margin-bottom: 0em;
-  margin-right: 2em;
+  margin-bottom: 1em;
+  margin-right: 1em;
   align-items: center;
   justify-content: right;
 }
 
 .recover-block {
-  margin-top: 1em;
+  margin-top: 0.4em;
+  margin-bottom: 4em;
 }
 
 ::placeholder {
@@ -135,54 +131,69 @@ input[type="submit"] {
   border-radius: 4px;
   padding: 12px 12px;
   margin-top: 4px;
-  margin-bottom: 0.4em;
   @include medium-text(whitesmoke);
-  background-color: $indigo;
+  background: rgb(177, 133, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(177, 133, 255, 1) 0%,
+    rgba(120, 140, 255, 1) 63%
+  );
   border: 1px solid $indigo;
   font-weight: 600;
-  width: 100%;
+  width: 98.8%;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background: rgb(80, 96, 212);
+  background: linear-gradient(
+    180deg,
+    rgba(80, 96, 212, 1) 0%,
+    rgba(142, 102, 213, 1) 88%
+  );
 }
 
 #username,
 #password {
-  padding-left: 32px;
+  padding-left: 16px;
 }
 
 h5 {
   font-weight: 400;
   margin: 0.4em;
   margin-bottom: 1.2em;
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 .toggle-button {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-end left;
+  margin-left: 1em;
+  margin-bottom: 1em;
 }
 
 button {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 4px;
+  border-radius: 100px;
   padding: 12px 4px;
   margin-right: 3.2em;
   font-size: 10px;
-  background-color: $gold;
-  border: 1px solid $gold;
+  background-color: $deep-data;
+  border: 1px solid $indigo;
   font-weight: 600;
   width: 14em;
-  color: $black;
+  color: whitesmoke;
   letter-spacing: 1px;
   cursor: pointer;
 }
 
 .form-control {
+  margin-bottom: 0.4em;
   display: flex;
-  max-width: 24em;
-  width: 62.6vw;
+  width: 90%;
   padding: 12px 12px;
-  margin: 1px 0;
   border: 1px solid $indigo;
   border-radius: 4px;
   background-color: rgba($indigo, 0.6);

@@ -3,6 +3,7 @@ import { createStore } from "vuex";
 // initial state
 const userSelectedDarkMode =
   window.localStorage.getItem("isDarkMode") === "true";
+
 const state = {
   isDarkMode: userSelectedDarkMode,
 };
