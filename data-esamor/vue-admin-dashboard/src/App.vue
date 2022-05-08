@@ -1,13 +1,21 @@
 <template>
-  <router-view />
+  <div id="app">
+    <router-view />
+    <ToggleButton />
+  </div>
 </template>
 
 <script>
+import ToggleButton from "@/components/Toggle.vue";
+
 export default {
   name: "App",
+  components: {
+    ToggleButton,
+  },
   mounted() {
     const isDarkMode = this.$store.getters.isDarkMode;
-    document.body.style.background = isDarkMode ? "#282828" : "#whitesmoke";
+    document.body.style.background = isDarkMode ? "#2E2E4D" : "#f5f5f5";
   },
 };
 </script>
@@ -20,8 +28,14 @@ export default {
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
+html {
+  height: 100%;
+}
+
 body {
-  background-color: whitesmoke;
+  background: #f5f5f5;
+  margin: 0px;
+  height: 100%;
 }
 
 #app {
@@ -30,6 +44,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: $indigo;
+  height: 100%;
 }
 
 h1 {
@@ -50,18 +65,5 @@ h4 {
 
 p {
   color: $black;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: $black;
-
-    &.router-link-exact-active {
-      color: $gold;
-    }
-  }
 }
 </style>

@@ -11,4 +11,20 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style scoped lang="scss">
+@import "@/global-styles/colors.sass";
+@import "@/global-styles/typography.sass";
+
+nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: $black;
+
+    &.router-link-exact-active {
+      color: $gold;
+    }
+  }
+}
+</style>

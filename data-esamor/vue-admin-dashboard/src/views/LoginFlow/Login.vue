@@ -48,9 +48,6 @@
         >Forget your password?</router-link
       >
     </div>
-    <div class="toggle-button">
-      <button v-on:click="toggleDarkMode()">Toggle Dark Mode</button>
-    </div>
   </div>
 </template>
 
@@ -62,11 +59,7 @@ export default {
       return this.$store.getters.isDarkMode;
     },
   },
-  methods: {
-    toggleDarkMode() {
-      this.$store.commit("toggleDarkMode");
-    },
-  },
+  components: {},
 };
 </script>
 
@@ -74,13 +67,21 @@ export default {
 @import "@/global-styles/colors.sass";
 @import "@/global-styles/typography.sass";
 
+.togglebutton {
+  display: flex;
+}
+
+.login-view {
+  height: 90%;
+}
+
 .light-background {
   color: $black;
   background: whitesmoke;
 }
 .dark-background {
   color: whitesmoke;
-  background: #282828;
+  background: #2e2e4d;
 }
 
 .login-container {
@@ -97,7 +98,6 @@ export default {
   align-items: center;
   margin-top: 0em;
   margin-bottom: 2em;
-  max-height: 60vh;
 }
 
 .login-form {
@@ -111,7 +111,6 @@ export default {
 
 .request-block {
   display: flex;
-  margin-bottom: 1em;
   margin-right: 1em;
   align-items: center;
   justify-content: right;
@@ -119,7 +118,6 @@ export default {
 
 .recover-block {
   margin-top: 0.4em;
-  margin-bottom: 4em;
 }
 
 ::placeholder {
@@ -132,7 +130,6 @@ input[type="submit"] {
   padding: 12px 12px;
   margin-top: 4px;
   @include medium-text(whitesmoke);
-  background: rgb(177, 133, 255);
   background: linear-gradient(
     180deg,
     rgba(177, 133, 255, 1) 0%,
@@ -145,7 +142,6 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background: rgb(80, 96, 212);
   background: linear-gradient(
     180deg,
     rgba(80, 96, 212, 1) 0%,
@@ -163,30 +159,6 @@ h5 {
   margin: 0.4em;
   margin-bottom: 1.2em;
   font-size: 1.1em;
-}
-
-.toggle-button {
-  display: flex;
-  justify-content: flex-end left;
-  margin-left: 1em;
-  margin-bottom: 1em;
-}
-
-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 100px;
-  padding: 12px 4px;
-  margin-right: 3.2em;
-  font-size: 10px;
-  background-color: $deep-data;
-  border: 1px solid $indigo;
-  font-weight: 600;
-  width: 14em;
-  color: whitesmoke;
-  letter-spacing: 1px;
-  cursor: pointer;
 }
 
 .form-control {
