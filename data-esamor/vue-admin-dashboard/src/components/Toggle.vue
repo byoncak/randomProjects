@@ -99,7 +99,7 @@ img {
   border-radius: 100%;
   background-color: #2e2e4d;
   mix-blend-mode: normal;
-  box-shadow: 0px 4px 8px rgba(46, 46, 77, 0.24);
+  box-shadow: 0px 4px 8px rgba(46, 46, 77, 0.6);
   transition: background-color 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   position: absolute;
   transform: translateX(75%);
@@ -116,10 +116,10 @@ img {
   border-radius: 100%;
   background-color: #f5f5f5;
   mix-blend-mode: normal;
-  box-shadow: 0px 4px 8px rgba(46, 46, 77, 0.24);
   transition: background-color 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   position: absolute;
   transform: translateX(-80%);
   transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0px 4px 8px rgba(#f5f5f5, 0.6);
 }
 </style>

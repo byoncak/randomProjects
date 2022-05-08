@@ -31,12 +31,14 @@
             id="username"
             placeholder="Username"
             class="form-control"
+            autocomplete="off"
           />
           <input
             type="password"
             placeholder="Password"
             id="password"
             class="form-control"
+            autocomplete="off"
           />
           <input type="submit" value="Log In" />
         </form>
@@ -171,6 +173,12 @@ h5 {
   background-color: rgba($indigo, 0.6);
   font-weight: 600;
   @include medium-text(whitesmoke);
+}
+
+.form-control:focus {
+  outline: none !important;
+  background-color: rgba($indigo, 0.6);
+  border: 2.4px solid $mint;
 }
 
 #logo {
